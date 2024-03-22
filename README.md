@@ -69,7 +69,7 @@ This plot shows a relatively stronger increasting correlation between number of 
 
 Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.  
 |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
-|---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
+|:---------|----------:|-----------:|-----------:|-----------:|-----------:|-----------:|
 |   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
 |   244.25 |    322.8  |     390.8  |     452.25 |     534.4  |     459.5  | 766.3      |
 |   286.3  |    347.65 |     444.15 |     567    |     608.15 |     660.2  | 555.9      |
