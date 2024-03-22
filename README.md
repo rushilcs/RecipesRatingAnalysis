@@ -65,8 +65,8 @@ This plot shows a relatively increasing correlation between number of steps and 
 ></iframe>  
 This plot shows a relatively stronger increasting correlation between number of calories and number of ingredients; however, just like the previous graph, this doesn't seem like an overall strong correlation and cannot be confirmed with just this graph.
 
-*Interesting Aggregates*
-Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.  
+*Interesting Aggregates*  
+Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.    
 |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
 |---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
 |   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
@@ -87,7 +87,7 @@ We believe that the rating column, which is missing 2609 values could be NMAR. E
 ### Missingness Dependency
 Here, we will test if the missingness of the rating column is dependent on the number of steps and amount of protein in the recipe. We will do this using permutation tests.
 
-*Rating vs. Number of Steps*
+*Rating vs. Number of Steps*  
 Null Hypothesis: The distribution of the number of steps when rating is missing is the same as the distribution of the number of steps when rating is not missing.  
 Alternate Hypothesis: The distribution of the number of steps when rating is missing is not the same as the distribution of the number of steps when rating is not missing.
 We will use the absolute difference of means because both columns are numerical.  
@@ -99,7 +99,7 @@ We will use the absolute difference of means because both columns are numerical.
 ></iframe> 
 The above plot shows the simulated difference of means in number of steps when rating is and is not missing. It shows that the observed absolute difference in means is far greater than the distribution indicating that the results may be statistically significant. This was confirmed by our p-value of 0.0, which is less than our significance level of 0.05. Therefore, we conclude this test by rejecting the null, stating that the distributions of number of steps when rating is missing and when not are not the same. There could be many reasons for this, but we infer one may be that recipes with a lot of steps or very few steps are less likely to be replicated and rated, thus leading to missing values for those recipes.
 
-*Rating vs. Protein Amount(PDV)*
+*Rating vs. Protein Amount(PDV)*  
 Null Hypothesis: The distribution of protein amount when rating is missing is the same as the distribution of protein amount when rating is not missing.  
 Alternate Hypothesis: The distribution of protein amount when rating is missing is not the same as the distribution of protein amount when rating is not missing.
 We will use the absolute difference of means because both columns are numerical.  
@@ -120,7 +120,7 @@ Alternate Hypothesis: Complex recipes have more calories.
 
 We first plotted the distributions of number of calories of simple and complex recipes to get a better understanding of the data.
 <iframe
-  src="assets/missing2.html"
+  src="assets/hypo.html"
   width="800"
   height="600"
   frameborder="0"
