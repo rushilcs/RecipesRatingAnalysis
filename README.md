@@ -40,4 +40,9 @@ We conducted an analysis of several of our variables to gain better insight into
 
 *Univariate Analysis*
 In our univariate analysis, we analyzed the distribution of number of calories.
-
+<iframe
+  src="assets/univariate.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
