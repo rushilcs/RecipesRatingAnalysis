@@ -67,7 +67,7 @@ This plot shows a relatively stronger increasting correlation between number of 
 
 *Interesting Aggregates*  
 
-Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.    
+Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.  
 |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
 |---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
 |   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
