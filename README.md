@@ -67,21 +67,49 @@ This plot shows a relatively stronger increasting correlation between number of 
 
 *Interesting Aggregates*
 Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.
-| number of steps   |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
-|:------------------|---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
-| (0, 10]           |   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
-| (10, 20]          |   244.25 |    322.8  |     390.8  |     452.25 |     534.4  |     459.5  | 766.3      |
-| (20, 30]          |   286.3  |    347.65 |     444.15 |     567    |     608.15 |     660.2  | 555.9      |
-| (30, 40]          |   395.35 |    316.15 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |
-| (40, 50]          |   273    |    345.4  |     495.3  |     572.55 |     805.8  |     554    | n/a        |
-| (50, 100]         |   192.8  |    262.75 |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |
+|   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
+|---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
+|   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
+|   244.25 |    322.8  |     390.8  |     452.25 |     534.4  |     459.5  | 766.3      |
+|   286.3  |    347.65 |     444.15 |     567    |     608.15 |     660.2  | 555.9      |
+|   395.35 |    316.15 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |
+|   273    |    345.4  |     495.3  |     572.55 |     805.8  |     554    | n/a        |
+|   192.8  |    262.75 |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |
 
-The leftmost column, number of steps is our index and the remaining columns are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column,
-which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
+This dataframe is indexed on the left by number of steps in the same bins as the columns: (0, 5], (5, 10], (10, 15] and so on. The columns shown are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column, which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
 
 ## Assessment of Missingness
 In this section, we will assess the reasoning for some missing values in our dataset.
 
 ### NMAR Analysis
+We believe that the rating column, which is missing 2609 values could be NMAR. Earlier in the project, we were instructed to replace rating values of 0 with np.NaN, which we believe is due to 0 being the default value of the rating and thus if it was left at 0, rating was not filled out. It is posssible that rating was not filled out because people are more likely to leave ratings for recipes that they either thoroughly liked or disliked but not as often if they just found it average. Another possibility is that recipes that are harder or niche are less likely to be tried by other people and thus will not have a rating value. In order to counterract this, additional data such as how difficult or niche a recipe is on some sort of quantitative scale could help explain this missingess and make the missing data MAR.
+
+### Missingness Dependency
+Here, we will test if the missingness of the rating column is dependent on the number of steps and amount of protein in the recipe. We will do this using permutation tests.
+
+*Rating vs. Number of Steps*
+Null Hypothesis: The distribution of the number of steps when rating is missing is the same as the distribution of the number of steps when rating is not missing.  
+Alternate Hypothesis: The distribution of the number of steps when rating is missing is not the same as the distribution of the number of steps when rating is not missing.
+We will use the absolute difference of means because both columns are numerical.  
+<iframe
+  src="assets/missing1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe> 
+The above plot shows the simulated difference of means in number of steps when rating is and is not missing. It shows that the observed absolute difference in means is far greater than the distribution indicating that the results may be statistically significant. This was confirmed by our p-value of 0.0, which is less than our significance level of 0.05. Therefore, we conclude this test by rejecting the null, stating that the distributions of number of steps when rating is missing and when not are not the same. There could be many reasons for this, but we infer one may be that recipes with a lot of steps or very few steps are less likely to be replicated and rated, thus leading to missing values for those recipes.
+
+*Rating vs. Protein Amount(PDV)*
+Null Hypothesis: The distribution of protein amount when rating is missing is the same as the distribution of protein amount when rating is not missing.  
+Alternate Hypothesis: The distribution of protein amount when rating is missing is not the same as the distribution of protein amount when rating is not missing.
+We will use the absolute difference of means because both columns are numerical.  
+<iframe
+  src="assets/missing2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe> 
+The above plot shows the simulated difference of means in protein amount when rating is and is not missing. It shows that the observed absolute difference in means is far roughly near the middle of the distribution indicating that the results are likely not statistically significant. This was confirmed by our p-value of 0.204, which is greater than our significance level of 0.05. Therefore, we conclude this test by failing to reject the null, stating that the distributions of number of steps when rating is missing and when not are the same and thus the missingess of rating is not dependent on the protein amount (pdv) in our dataset.
+
 
 
