@@ -78,22 +78,23 @@ Here, we computed a pivot table to examine the number of calories in a recipe ba
 
 The leftmost column, number of steps is our index and the remaining columns are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column,
 which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
-
-~~~
-<table border="1" class="dataframe">
+```html
+<table>
   <thead>
     <tr style="text-align: right;">
+      <th></th>
       <th>number of ingredients</th>
       <th>(0, 5]</th>
-      <th>(5, 10]</th>
       <th>(10, 15]</th>
       <th>(15, 20]</th>
       <th>(20, 25]</th>
       <th>(25, 30]</th>
       <th>(30, 40]</th>
+      <th>(5, 10]</th>
     </tr>
     <tr>
       <th>number of steps</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -107,67 +108,66 @@ which would have impacted the mean value more. This table confirms our earlier s
     <tr>
       <th>(0, 10]</th>
       <td>193.65</td>
-      <td>272.40</td>
       <td>328.50</td>
       <td>389.05</td>
       <td>413.10</td>
       <td>505.20</td>
-      <td>338.2</td>
+      <td>338.20</td>
+      <td>272.40</td>
     </tr>
     <tr>
       <th>(10, 20]</th>
       <td>244.25</td>
-      <td>322.80</td>
       <td>390.80</td>
       <td>452.25</td>
       <td>534.40</td>
       <td>459.50</td>
-      <td>766.3</td>
+      <td>766.30</td>
+      <td>322.80</td>
     </tr>
     <tr>
       <th>(20, 30]</th>
       <td>286.30</td>
-      <td>347.65</td>
       <td>444.15</td>
       <td>567.00</td>
       <td>608.15</td>
       <td>660.20</td>
-      <td>555.9</td>
+      <td>555.90</td>
+      <td>347.65</td>
     </tr>
     <tr>
       <th>(30, 40]</th>
       <td>395.35</td>
-      <td>316.15</td>
       <td>469.25</td>
       <td>583.70</td>
       <td>580.20</td>
       <td>956.60</td>
-      <td>1031.6</td>
+      <td>1031.60</td>
+      <td>316.15</td>
     </tr>
     <tr>
       <th>(40, 50]</th>
       <td>273.00</td>
-      <td>345.40</td>
       <td>495.30</td>
       <td>572.55</td>
       <td>805.80</td>
       <td>554.00</td>
       <td>n/a</td>
+      <td>345.40</td>
     </tr>
     <tr>
       <th>(50, 100]</th>
       <td>192.80</td>
-      <td>262.75</td>
       <td>540.30</td>
       <td>827.40</td>
       <td>600.15</td>
       <td>1562.25</td>
       <td>n/a</td>
+      <td>262.75</td>
     </tr>
   </tbody>
 </table>
-~~~
-
+```
 ## Assessment of Missingness
 In this section, we will assess the reasoning for some missing values in our dataset.
 
