@@ -109,7 +109,7 @@ We will use the absolute difference of means because both columns are numerical.
   height="600"
   frameborder="0"
 ></iframe> 
-The above plot shows the simulated difference of means in protein amount when rating is and is not missing. It shows that the observed absolute difference in means is far roughly near the middle of the distribution indicating that the results are likely not statistically significant. This was confirmed by our p-value of 0.204, which is greater than our significance level of 0.05. Therefore, we conclude this test by failing to reject the null, stating that the distributions of number of steps when rating is missing and when not are the same and thus the missingess of rating is not dependent on the protein amount (pdv) in our dataset.
+The above plot shows the simulated difference of means in protein amount when rating is and is not missing. It shows that the observed absolute difference in means is roughly near the middle of the distribution indicating that the results are likely not statistically significant. This was confirmed by our p-value of 0.204, which is greater than our significance level of 0.05. Therefore, we conclude this test by failing to reject the null, stating that the distributions of number of steps when rating is missing and when not are the same and thus the missingess of rating is not dependent on the protein amount (pdv) in our dataset.
 
 ## Hypothesis Testing
 
@@ -125,3 +125,12 @@ We first plotted the distributions of number of calories of simple and complex r
   height="600"
   frameborder="0"
 ></iframe>
+The plot does not show a large difference in the two distributions, but we will move on with our test. Despite the distributions, there is a significant difference between the mean number of calories in simple and complex recipes (~180 calories) 
+and thus we will use the absolute difference of means as the test statistic.
+<iframe
+  src="assets/hypo.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+After running our simulation, we find that our observed difference of means is far greater than our distribution, indicating that our results are not statistically significant. This is confirmed by our low p-value of 0.0, allowing us to reject the null at the 0.05 significance level. The results of the test appear to show that complex and simple recipes in our dataset tend to not have the same number of calories, but we cannot definitively say that complex recipes have more calories  than simple recipes because this is just a statistical analysis.
