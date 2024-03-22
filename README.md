@@ -1,4 +1,4 @@
-# Recipe Ratings Analysis test
+# Recipe Ratings Analysis tes
 By: Anish Kasam and Rushil Chandrupatla
 
 ## Introduction
@@ -43,7 +43,7 @@ In our univariate analysis, we analyzed the distribution of number of calories.
 <iframe
   src="assets/univariate.html"
   width="800"
-  height="350"
+  height="425"
   frameborder="0"
 ></iframe>  
 It seems that the distribution is approximately Gaussian and right-skewed. This also shows us that the most common number of calories that recipes in our dataset have is around 130 - 230 calories.
