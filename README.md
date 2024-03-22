@@ -148,7 +148,7 @@ After running our simulation, we find that our observed difference of means is f
 
 
 
-## Problem Identification
+## Framing a Prediction Problem
 Here, we will be predicting the rating of a recipe from other relevant features. We identified these features as minutes, calories, n_steps, n_ingredients, total fat, and sugar. This is a regression problem and our response variable is rating. We chose this variable to predict because it has been a focus of our whole project and we wanted to see if the correlation between rating and the other columns was strong enough to build an accurate predictor for it. We felt that this would be useful for people whose recipes do not get many views as it takes a lot of people and ratings to determine an accurate rating for a recipe, which may not always be feasible to get. 
 
 The metric we used to evaluate our model is RMSE, which we chose because it measures the root of the average difference in predicted versus actual values, allowing us to measure relatively how accurate our results are. We chose it over other metrics because it is still interpretable, with the RMSE having real meaning to our rating (ie. an RMSE of 0.5 means that the average difference in predicted versus actual values is 0.5^2^ = 0.25) and the same units.
