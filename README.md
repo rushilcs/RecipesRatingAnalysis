@@ -67,18 +67,106 @@ This plot shows a relatively stronger increasting correlation between number of 
 
 *Interesting Aggregates*
 Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.
-| number of steps   |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] | (25, 30]   |   (30, 40] |
-|:------------------|---------:|----------:|-----------:|-----------:|-----------:|:-----------|-----------:|
-| (0, 10]           |   193.65 |    328.5  |     389.05 |     413.1  |     505.2  | 338.2      |     272.4  |
-| (10, 20]          |   244.25 |    390.8  |     452.25 |     534.4  |     459.5  | 766.3      |     322.8  |
-| (20, 30]          |   286.3  |    444.15 |     567    |     608.15 |     660.2  | 555.9      |     347.65 |
-| (30, 40]          |   395.35 |    469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |     316.15 |
-| (40, 50]          |   273    |    495.3  |     572.55 |     805.8  |     554    | n/a        |     345.4  |
-| (50, 100]         |   192.8  |    540.3  |     827.4  |     600.15 |    1562.25 | n/a        |     262.75 |
+|   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
+|---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
+|   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
+|   244.25 |    322.8  |     390.8  |     452.25 |     534.4  |     459.5  | 766.3      |
+|   286.3  |    347.65 |     444.15 |     567    |     608.15 |     660.2  | 555.9      |
+|   395.35 |    316.15 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |
+|   273    |    345.4  |     495.3  |     572.55 |     805.8  |     554    | n/a        |
+|   192.8  |    262.75 |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |
 
 The leftmost column, number of steps is our index and the remaining columns are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column,
 which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
 
+'''
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>number of ingredients</th>
+      <th>(0, 5]</th>
+      <th>(5, 10]</th>
+      <th>(10, 15]</th>
+      <th>(15, 20]</th>
+      <th>(20, 25]</th>
+      <th>(25, 30]</th>
+      <th>(30, 40]</th>
+    </tr>
+    <tr>
+      <th>number of steps</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(0, 10]</th>
+      <td>193.65</td>
+      <td>272.40</td>
+      <td>328.50</td>
+      <td>389.05</td>
+      <td>413.10</td>
+      <td>505.20</td>
+      <td>338.2</td>
+    </tr>
+    <tr>
+      <th>(10, 20]</th>
+      <td>244.25</td>
+      <td>322.80</td>
+      <td>390.80</td>
+      <td>452.25</td>
+      <td>534.40</td>
+      <td>459.50</td>
+      <td>766.3</td>
+    </tr>
+    <tr>
+      <th>(20, 30]</th>
+      <td>286.30</td>
+      <td>347.65</td>
+      <td>444.15</td>
+      <td>567.00</td>
+      <td>608.15</td>
+      <td>660.20</td>
+      <td>555.9</td>
+    </tr>
+    <tr>
+      <th>(30, 40]</th>
+      <td>395.35</td>
+      <td>316.15</td>
+      <td>469.25</td>
+      <td>583.70</td>
+      <td>580.20</td>
+      <td>956.60</td>
+      <td>1031.6</td>
+    </tr>
+    <tr>
+      <th>(40, 50]</th>
+      <td>273.00</td>
+      <td>345.40</td>
+      <td>495.30</td>
+      <td>572.55</td>
+      <td>805.80</td>
+      <td>554.00</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <th>(50, 100]</th>
+      <td>192.80</td>
+      <td>262.75</td>
+      <td>540.30</td>
+      <td>827.40</td>
+      <td>600.15</td>
+      <td>1562.25</td>
+      <td>n/a</td>
+    </tr>
+  </tbody>
+</table>
+'''
 
 ## Assessment of Missingness
 In this section, we will assess the reasoning for some missing values in our dataset.
