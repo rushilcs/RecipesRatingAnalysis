@@ -79,7 +79,7 @@ Here, we computed a pivot table to examine the number of calories in a recipe ba
 The leftmost column, number of steps is our index and the remaining columns are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column,
 which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
 
-'''
+~~~
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -166,7 +166,7 @@ which would have impacted the mean value more. This table confirms our earlier s
     </tr>
   </tbody>
 </table>
-'''
+~~~
 
 ## Assessment of Missingness
 In this section, we will assess the reasoning for some missing values in our dataset.
