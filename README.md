@@ -1,4 +1,4 @@
-# Recipes Rating Analysis
+# Recipe Ratings Analysis
 By: Anish Kasam and Rushil Chandrupatla
 
 ## Introduction
