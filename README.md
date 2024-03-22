@@ -38,7 +38,7 @@ Here are the first few rows of the final dataset after all cleaning (only releva
 
 We conducted an analysis of several of our variables to gain better insight into them for future tasks and answering our main question.
 
-*Univariate Analysis*
+*Univariate Analysis*  
 In our univariate analysis, we analyzed the distribution of number of calories.
 <iframe
   src="assets/univariate.html"
