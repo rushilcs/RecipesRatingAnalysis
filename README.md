@@ -1,6 +1,5 @@
 By: Anish Kasam and Rushil Chandrupatla
 
-#test
 
 ## Introduction
 
@@ -78,6 +77,15 @@ Here, we computed a pivot table to examine the number of calories in a recipe ba
 |   395.35 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |    316.15 |
 |   273    |     495.3  |     572.55 |     805.8  |     554    | n/a        |    345.4  |
 |   192.8  |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |    262.75 |
+
+| number of steps   |   (0, 5] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |   (5, 10] |
+|:------------------|---------:|-----------:|-----------:|-----------:|-----------:|:-----------|----------:|
+| (0, 10]           |   193.65 |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |    272.4  |
+| (10, 20]          |   244.25 |     390.8  |     452.25 |     534.4  |     459.5  | 766.3      |    322.8  |
+| (20, 30]          |   286.3  |     444.15 |     567    |     608.15 |     660.2  | 555.9      |    347.65 |
+| (30, 40]          |   395.35 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |    316.15 |
+| (40, 50]          |   273    |     495.3  |     572.55 |     805.8  |     554    | n/a        |    345.4  |
+| (50, 100]         |   192.8  |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |    262.75 |
 
 
 This dataframe is indexed on the left by number of steps in the same bins as the columns: (0, 5], (5, 10], (10, 15] and so on. The columns shown are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column, which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
