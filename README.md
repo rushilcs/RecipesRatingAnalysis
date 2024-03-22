@@ -66,7 +66,7 @@ This plot shows a relatively increasing correlation between number of steps and 
 This plot shows a relatively stronger increasting correlation between number of calories and number of ingredients; however, just like the previous graph, this doesn't seem like an overall strong correlation and cannot be confirmed with just this graph.
 
 *Interesting Aggregates*
-Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.
+Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.  
 |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
 |---------:|----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
 |   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
@@ -112,3 +112,16 @@ We will use the absolute difference of means because both columns are numerical.
 The above plot shows the simulated difference of means in protein amount when rating is and is not missing. It shows that the observed absolute difference in means is far roughly near the middle of the distribution indicating that the results are likely not statistically significant. This was confirmed by our p-value of 0.204, which is greater than our significance level of 0.05. Therefore, we conclude this test by failing to reject the null, stating that the distributions of number of steps when rating is missing and when not are the same and thus the missingess of rating is not dependent on the protein amount (pdv) in our dataset.
 
 ## Hypothesis Testing
+
+The question we tested for this part is: Do regular and complex recipes have the same number of calories? Here, we define complex recipes to be ones with more than 10 ingredients and 10 steps.  
+
+Null Hypothesis: Complex and Simple recipes have the same number of calories.
+Alternate Hypothesis: Complex recipes have more calories.
+
+We first plotted the distributions of number of calories of simple and complex recipes to get a better understanding of the data.
+<iframe
+  src="assets/missing2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
