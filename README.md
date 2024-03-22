@@ -53,14 +53,14 @@ In our bivariate analysis, we explored the relationship between (1) number of st
 <iframe
   src="assets/bivariate1.html"
   width="800"
-  height="600"
+  height="425"
   frameborder="0"
 ></iframe>  
 This plot shows a relatively increasing correlation between number of steps and number of calories; however, this is not a strong correlation and cannot be confirmed by just this graph.
 <iframe
   src="assets/bivariate2.html"
   width="800"
-  height="600"
+  height="425"
   frameborder="0"
 ></iframe>  
 This plot shows a relatively stronger increasting correlation between number of calories and number of ingredients; however, just like the previous graph, this doesn't seem like an overall strong correlation and cannot be confirmed with just this graph.
@@ -75,7 +75,7 @@ Here, we computed a pivot table to examine the number of calories in a recipe ba
 |   286.3  |    347.65 |     444.15 |     567    |     608.15 |     660.2  | 555.9      |
 |   395.35 |    316.15 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |
 |   273    |    345.4  |     495.3  |     572.55 |     805.8  |     554    | n/a        |
-|   192.8  |    262.75 |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |
+|   192.8  |    262.75 |     540.3  |     827.4  |     425.15 |    1562.25 | n/a        |
 
 This dataframe is indexed on the left by number of steps in the same bins as the columns: (0, 5], (5, 10], (10, 15] and so on. The columns shown are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column, which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
 
@@ -96,7 +96,7 @@ We will use the absolute difference of means because both columns are numerical.
 <iframe
   src="assets/missing1.html"
   width="800"
-  height="600"
+  height="425"
   frameborder="0"
 ></iframe> 
 The above plot shows the simulated difference of means in number of steps when rating is and is not missing. It shows that the observed absolute difference in means is far greater than the distribution indicating that the results may be statistically significant. This was confirmed by our p-value of 0.0, which is less than our significance level of 0.05. Therefore, we conclude this test by rejecting the null, stating that the distributions of number of steps when rating is missing and when not are not the same. There could be many reasons for this, but we infer one may be that recipes with a lot of steps or very few steps are less likely to be replicated and rated, thus leading to missing values for those recipes.
@@ -109,7 +109,7 @@ We will use the absolute difference of means because both columns are numerical.
 <iframe
   src="assets/missing2.html"
   width="800"
-  height="600"
+  height="425"
   frameborder="0"
 ></iframe> 
 The above plot shows the simulated difference of means in protein amount when rating is and is not missing. It shows that the observed absolute difference in means is roughly near the middle of the distribution indicating that the results are likely not statistically significant. This was confirmed by our p-value of 0.204, which is greater than our significance level of 0.05. Therefore, we conclude this test by failing to reject the null, stating that the distributions of number of steps when rating is missing and when not are the same and thus the missingess of rating is not dependent on the protein amount (pdv) in our dataset.
@@ -125,7 +125,7 @@ We first plotted the distributions of number of calories of simple and complex r
 <iframe
   src="assets/hypo.html"
   width="800"
-  height="600"
+  height="425"
   frameborder="0"
 ></iframe>
 The plot does not show a large difference in the two distributions, but we will move on with our test. Despite the distributions, there is a significant difference between the mean number of calories in simple and complex recipes (~180 calories) 
@@ -133,7 +133,7 @@ and thus we will use the absolute difference of means as the test statistic.
 <iframe
   src="assets/hypo.html"
   width="800"
-  height="600"
+  height="425"
   frameborder="0"
 ></iframe>
 After running our simulation, we find that our observed difference of means is far greater than our distribution, indicating that our results are not statistically significant. This is confirmed by our low p-value of 0.0, allowing us to reject the null at the 0.05 significance level. The results of the test appear to show that complex and simple recipes in our dataset tend to not have the same number of calories, but we cannot definitively say that complex recipes have more calories  than simple recipes because this is just a statistical analysis.
