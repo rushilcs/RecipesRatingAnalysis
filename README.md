@@ -111,5 +111,4 @@ We will use the absolute difference of means because both columns are numerical.
 ></iframe> 
 The above plot shows the simulated difference of means in protein amount when rating is and is not missing. It shows that the observed absolute difference in means is far roughly near the middle of the distribution indicating that the results are likely not statistically significant. This was confirmed by our p-value of 0.204, which is greater than our significance level of 0.05. Therefore, we conclude this test by failing to reject the null, stating that the distributions of number of steps when rating is missing and when not are the same and thus the missingess of rating is not dependent on the protein amount (pdv) in our dataset.
 
-
-
+## Hypothesis Testing
