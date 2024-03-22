@@ -46,5 +46,35 @@ In our univariate analysis, we analyzed the distribution of number of calories.
   height="600"
   frameborder="0"
 ></iframe>  
+It seems that the distribution is approximately Gaussian and right-skewed. This also shows us that the most common number of calories that recipes in our dataset have is around 130 - 230 calories.
 
-change w a plot
+*Bivariate Analysis*
+In our bivariate analysis, we explored the relationship between (1) number of steps and calories and (2) number of ingredients and calories.
+<iframe
+  src="assets/bivariate1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+This plot shows a relatively increasing correlation between number of steps and number of calories; however, this is not a strong correlation and cannot be confirmed by just this graph.
+<iframe
+  src="assets/bivariate2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+This plot shows a relatively stronger increasting correlation between number of calories and number of ingredients; however, just like the previous graph, this doesn't seem like an overall strong correlation and cannot be confirmed with just this graph.
+
+*Interesting Aggregates*
+Here, we computed a pivot table to examine the number of calories in a recipe based on its number of steps and ingredients.
+| number of steps   |   (0, 5] |   (5, 10] |   (10, 15] |   (15, 20] |   (20, 25] |   (25, 30] | (30, 40]   |
+|:------------------|---------:|----------:|-----------:|-----------:|-----------:|-----------:|-----------:|
+| (0, 10]           |   193.65 |    272.4  |     328.5  |     389.05 |     413.1  |     505.2  | 338.2      |
+| (10, 20]          |   244.25 |    322.8  |     390.8  |     452.25 |     534.4  |     459.5  | 766.3      |
+| (20, 30]          |   286.3  |    347.65 |     444.15 |     567    |     608.15 |     660.2  | 555.9      |
+| (30, 40]          |   395.35 |    316.15 |     469.25 |     583.7  |     580.2  |     956.6  | 1031.6     |
+| (40, 50]          |   273    |    345.4  |     495.3  |     572.55 |     805.8  |     554    | n/a        |
+| (50, 100]         |   192.8  |    262.75 |     540.3  |     827.4  |     600.15 |    1562.25 | n/a        |
+The leftmost column, number of steps is our index and the remaining columns are bins of number of ingredients, with the actual values being the median calories. Median was used as our aggregation function due to the presence of many outliers in this column,
+which would have impacted the mean value more. This table confirms our earlier suspicions that there seems to be an increasing correlation between number of steps and calories, especially when sorted by number of ingredients.
+
